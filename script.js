@@ -80,11 +80,11 @@ const refiners = [
 window.onload = function() {
   x = parseInt(getCookie("x")) || 0;
   workers = parseInt(getCookie("workers")) || 0;
-  lvl = parseInt(getCookie("lvl")) || 0;
+  lvl = parseInt(getCookie("lvl")) || 1;
   grams = parseInt(getCookie("grams")) || 0;
   upgr = parseInt(getCookie("spade")) || 1;
   drill = parseInt(getCookie("drill")) || 0;
-  ref = parseInt(getCookie("ref")) || 1;
+  ref = parseInt(getCookie("ref")) || 0;
   rebirths = parseInt(getCookie("rebirths")) || 0;
   xp = parseInt(getCookie("xp")) || 0;
 }
