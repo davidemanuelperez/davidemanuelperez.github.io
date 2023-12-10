@@ -185,7 +185,7 @@ setInterval(function() {
         document.getElementById("upgrade").innerHTML = `MAX`
     }
 
-    for (i=0; i < levels.length; i++) {
+    for (i=0; i < 7; i++) {
         let l = 1
         if (xp >= levels[i].xp) {
             l++
@@ -197,7 +197,7 @@ setInterval(function() {
     }
     
     let filee = document.getElementById("file")
-    if (lvl<levels.length) {
+    if (lvl<6) {
         filee.value = xp
         filee.max = levels[lvl].xp
     } else {
