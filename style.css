@@ -1,7 +1,14 @@
 @import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
 
-.float-r{
-    float: right
+.float-r {
+         position: fixed;
+      top: 0;
+      right: 0;
+      width: 300px;
+      height: 100vh;
+      background-color: lightgray;
+      padding: 10px;
+      box-sizing: border-box;
 }
 
 .cenp {
