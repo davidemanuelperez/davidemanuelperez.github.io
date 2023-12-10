@@ -174,8 +174,8 @@ document.addEventListener("keypress", function(event) {
   }
 });
 
-let textElement = document.getElementById("cenp")
 let imageButton = document.getElementById("CookieButton")
+let panel = document.getElementById("cenp")
 imageButton.addEventListener("click", function() {
   // Create a new element to display the text
   var textElement = document.createElement("div");
