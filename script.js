@@ -12,7 +12,7 @@ let answered = false
 
 
 
-    x=localStorage.getItem("x") || 0
+    x=localStorage.getItem("x")
     upgr=localStorage.getItem("upgr") || 1
     lvl=localStorage.getItem("lvl") || 1
     xp=localStorage.getItem("xp") || 0
