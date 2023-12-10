@@ -223,7 +223,7 @@ setInterval(function() {
     document.getElementById("rlevel").innerHTML = `Refiner Level ${ref}`
     document.getElementById("reffects").innerHTML = `Refiner Effects: x${refiners[ref].refiner}`
     document.getElementById("refinerupgrade").innerHTML = `Upgrade Refiner: $${formatCash(refiners[ref+1].cost)}`
-    	document.getElementById("buyWorker").innerHTML = `Buy Worker(${workers}): ${formatCash((10*workers) + 500)}`
+    	document.getElementById("buyWorker").innerHTML = `Buy Worker(${workers}): ${formatCash( refiners[workers].cost)}`
 
 	document.getElementById("workertext").innerHTML = `Workers: ${workers}`
 },100)
@@ -262,11 +262,11 @@ setInterval(function() {
 		for (i=0; i < workers; i++) {
 			increase()
 		}	
-	}, 100)
+	}, Math.random() * 100)
 }, 1000)
 
 function buyWorker() {
-	let workerCost = (workers + 500) * 10
+	let workerCost = refiners[workers].cost
 	if (x>= workerCost) {
 		x -= workerCost
 		workers++
