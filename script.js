@@ -261,7 +261,7 @@ setInterval(function() {
 			increase()
 		}	
 	}, 100)
-}, 5000)
+}, 1000)
 
 function buyWorker() {
 	let workerCost = (10 * workers ) + 500
