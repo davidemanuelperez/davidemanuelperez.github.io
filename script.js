@@ -19,7 +19,7 @@ const upgrades = [
 	{name: "Earthen", cost: 250, multiplier: 2, power: [0,1,2]},
     {name: "Novice", cost: 15000, multiplier: 20, power: [1,2,3]},
     {name: "Iron", cost: 150000, multiplier: 40, power: [1,2,3,4]},
-    {name: "Bronze", cost: 5000000, multiplier: 80, power: [2,3,4,5,6,7]},
+    {name: "Bronze", cost: 2000000, multiplier: 80, power: [2,3,4,5,6,7]},
     {name: "Cobalt", cost: 10000000, multiplier: 120, power: [4,5,6,7]},
     {name: "Golden", cost: 100000000, multiplier: 150, power: [5,6,7,8]},
     {name: "Obsidian", cost: 1000000000, multiplier: 200, power: [6,7,8,9,10]},
