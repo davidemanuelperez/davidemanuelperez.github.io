@@ -100,6 +100,27 @@ window.onbeforeunload = function() {
   setCookie("rebirths", rebirths);
 }
 
+function setCookie(name, value) {
+  document.cookie = name + "=" + value + "; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/";
+}
+
+function getCookie(name) {
+  var cookieName = name + "=";
+  var cookieArray = document.cookie.split(';');
+  for(var i = 0; i < cookieArray.length; i++) {
+    var cookie = cookieArray[i];
+    while(cookie.charAt(0) === ' ') {
+      cookie = cookie.substring(1, cookie.length);
+    }
+    if(cookie.indexOf(cookieName) === 0) {
+      return cookie.substring(cookieName.length, cookie.length);
+    }
+  }
+  return null;
+}
+
+
+
 const formatCash = n => {
   if (n < 1e3) return n;
   if (n >= 1e3 && n < 1e6) return +(n / 1e3).toFixed(1) + "K";
@@ -109,7 +130,15 @@ const formatCash = n => {
 };
 
 function rebirth() {
-
+    if (upgrades[upgr-1].name = "Godmatter") {
+        x=0
+        workers=0
+        lvl=0
+        grams=0
+        upgr=0
+        ref=0
+        rebirths+=1
+    }
 }
 
 function increase() {
