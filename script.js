@@ -11,12 +11,12 @@ let ref = 0
 let answered = false
 
 if (localStorage.getItem("x") != null) {
-    x=localStorage.getItem("x") 
-    upgr=localStorage.getItem("upgr")
-    lvl=localStorage.getItem("lvl")
-    xp=localStorage.getItem("xp")
-    grams=localStorage.getItem("grams")
-    ref=localStorage.getItem("ref")
+    x=parseInt(localStorage.getItem("x"))
+    upgr=parseInt(localStorage.getItem("upgr"))
+    lvl=parseInt(localStorage.getItem("lvl"))
+    xp=parseInt(localStorage.getItem("xp"))
+    grams=parseInt(localStorage.getItem("grams"))
+    ref=parseInt(localStorage.getItem("ref"))
 }
 
 
