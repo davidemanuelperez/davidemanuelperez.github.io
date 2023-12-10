@@ -10,7 +10,7 @@ let grams = 0
 let ref = 0
 let answered = false
 
-if (localStorage.getItem("x") != null) {
+if (localStorage.getItem("x") != null || localStorage.getItem("x" != undefined)) {
     x=parseInt(localStorage.getItem("x"))
     upgr=parseInt(localStorage.getItem("upgr"))
     lvl=parseInt(localStorage.getItem("lvl"))
@@ -18,8 +18,6 @@ if (localStorage.getItem("x") != null) {
     grams=parseInt(localStorage.getItem("grams"))
     ref=parseInt(localStorage.getItem("ref"))
 }
-
-
 
 const upgrades = [
     {name: "No", cost: 0, multiplier: 1, power: [0,1]},
