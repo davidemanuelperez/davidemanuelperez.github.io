@@ -223,7 +223,7 @@ setInterval(function() {
     document.getElementById("rlevel").innerHTML = `Refiner Level ${ref}`
     document.getElementById("reffects").innerHTML = `Refiner Effects: x${refiners[ref].refiner}`
     document.getElementById("refinerupgrade").innerHTML = `Upgrade Refiner: $${formatCash(refiners[ref+1].cost)}`
-    
+    	document.getElementById("buyWorker").innerHTML = `Buy Worker(${workers}): ${workerCost}`
 },100)
 
 document.addEventListener("keypress", function(event) {
@@ -254,3 +254,17 @@ imageButton.addEventListener("click", function() {
     panel.removeChild(textElement);
   }, 1000);
 });
+
+setInterval(function() {
+	for (i=0; i < workers; i++) {
+		increase()
+	}
+}, 5000)
+
+function buyWorker() {
+	let workerCost = (10 * workers ) + 500
+	if (x>= workerCost) {
+		x -= workerCost
+		workers++
+	}
+}
