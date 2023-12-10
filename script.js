@@ -9,7 +9,15 @@ let bl
 let grams = 0
 let ref = 0
 let answered = false
-    
+
+
+
+    x=localStorage.getItem("x")
+    upgr=localStorage.getItem("upgr")
+    lvl=localStorage.getItem("lvl")
+    xp=localStorage.getItem("xp")
+    grams=localStorage.getItem("grams")
+    ref=localStorage.getItem("ref")
 const upgrades = [
     {name: "No", cost: 0, multiplier: 1, power: [0,1]},
 	{name: "Earthen", cost: 250, multiplier: 2, power: [0,1,2]},
@@ -151,7 +159,12 @@ setInterval(function() {
     document.getElementById("reffects").innerHTML = `Refiner Effects: x${refiners[ref].refiner}`
     document.getElementById("refinerupgrade").innerHTML = `Upgrade Refiner: $${formatCash(refiners[ref+1].cost)}`
 
-
+		localStorage.setItem("x", x)
+	localStorage.setItem("upgr", upgr)
+	localStorage.setItem("lvl", lvl)
+	localStorage.setItem("xp", xp)
+	localStorage.setItem("grams", grams)
+	localStorage.setItem("ref", ref)
     
 },100)
 
