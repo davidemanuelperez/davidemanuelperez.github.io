@@ -9,17 +9,6 @@ let bl
 let grams = 0
 let ref = 0
 let answered = false
-
-setInterval(function() {
-    if (answered == false) {
-        let person = prompt("Password?", "")
-        if (person == "wrath") {
-            answered = true
-        } else {
-            answered = false 
-        }
-    }
-}, 100)
     
 const upgrades = [
     {name: "No", cost: 0, multiplier: 1, power: [0,1]},
