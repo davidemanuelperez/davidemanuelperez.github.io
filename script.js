@@ -1,7 +1,7 @@
 
 
-let x=0
-let upgr = 1	
+let x = 0
+let upgr = 1
 let xp = 0
 let lvl = 1
 let strk = 0
@@ -10,14 +10,17 @@ let grams = 0
 let ref = 0
 let answered = false
 
+if (localStorage.getItem("x") != null) {
+    x=localStorage.getItem("x") 
+    upgr=localStorage.getItem("upgr")
+    lvl=localStorage.getItem("lvl")
+    xp=localStorage.getItem("xp")
+    grams=localStorage.getItem("grams")
+    ref=localStorage.getItem("ref")
+}
 
 
-    x=localStorage.getItem("x")
-    upgr=localStorage.getItem("upgr") || 1
-    lvl=localStorage.getItem("lvl") || 1
-    xp=localStorage.getItem("xp") || 0
-    grams=localStorage.getItem("grams") || 0
-    ref=localStorage.getItem("ref") || 0
+
 const upgrades = [
     {name: "No", cost: 0, multiplier: 1, power: [0,1]},
 	{name: "Earthen", cost: 250, multiplier: 2, power: [0,1,2]},
