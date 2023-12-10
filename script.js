@@ -9,20 +9,25 @@ let bl
 let grams = 0
 let ref = 0
 let answered = false
+let workers = 0
+let drill = 0
+let rebirths = 0
 
-if (localStorage.getItem("x") != null || localStorage.getItem("x" != undefined)) {
-    x=parseInt(localStorage.getItem("x"))
-    upgr=parseInt(localStorage.getItem("upgr"))
-    lvl=parseInt(localStorage.getItem("lvl"))
-    xp=parseInt(localStorage.getItem("xp"))
-    grams=parseInt(localStorage.getItem("grams"))
-    ref=parseInt(localStorage.getItem("ref"))
-}
 
 const upgrades = [
     {name: "No", cost: 0, multiplier: 1, power: [0,1]},
 	{name: "Earthen", cost: 250, multiplier: 2, power: [0,1,2]},
-    {name: "Novice", cost: 15000, multiplier: 2, power: [1,2,3,4]}
+    {name: "Novice", cost: 15000, multiplier: 3, power: [1,2,3]},
+    {name: "Iron", cost: 150000, multiplier: 4, power: [1,2,3,4]},
+    {name: "Bronze", cost: 5000000, multiplier: 4.5, power: [2,3,4,5,6,7]},
+    {name: "Cobalt", cost: 10000000, multiplier: 5, power: [4,5,6,7]},
+    {name: "Golden", cost: 100000000, multiplier: 6, power: [5,6,7,8]},
+    {name: "Obsidian", cost: 1000000000, multiplier: 20, power: [6,7,8,9,10]},
+    {name: "Diamond", cost: 100000000000, multiplier: 25, power: [10,11,12,13,14,15]},
+    {name: "Tanzanite", cost: 10000000000000, multiplier: 40, power: [13,14,15]},
+    {name: "Beryl", cost: 1000000000000000, multiplier: 80, power: [15,16]},
+    {name: "Painite", cost: 100000000000000000, multiplier: 125, power: [16,17,18]},
+    {name: "Godmatter", cost: 1500000000000000000000, multiplier: 2500, power: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18]}
 ]
 
 const rocks = [
@@ -71,6 +76,30 @@ const refiners = [
     {refiner: 32, cost: 10000000000000000}
 ]
 
+
+window.onload = function() {
+  tix = parseInt(getCookie("x")) || 0;
+  workers = parseInt(getCookie("workers")) || 0;
+  lvl = parseInt(getCookie("lvl")) || 0;
+  grams = parseInt(getCookie("grams")) || 0;
+  upgr = parseInt(getCookie("spade")) || 1;
+  drill = parseInt(getCookie("drill")) || 0;
+  ref = parseInt(getCookie("ref")) || 1;
+  rebirths = parseInt(getCookie("rebirths")) || 0;
+}
+
+// Save the variables to cookies when the page is about to close
+window.onbeforeunload = function() {
+  setCookie("x", x);
+  setCookie("workers", workers);
+  setCookie("lvl", lvl);
+  setCookie("grams", grams);
+  setCookie("upgr", upgr);
+  setCookie("drill", drill);
+  setCookie("ref", ref);
+  setCookie("rebirths", rebirths);
+}
+
 const formatCash = n => {
   if (n < 1e3) return n;
   if (n >= 1e3 && n < 1e6) return +(n / 1e3).toFixed(1) + "K";
@@ -78,6 +107,10 @@ const formatCash = n => {
   if (n >= 1e9 && n < 1e12) return +(n / 1e9).toFixed(1) + "B";
   if (n >= 1e12) return +(n / 1e12).toFixed(1) + "T";
 };
+
+function rebirth() {
+
+}
 
 function increase() {
     let rawOre = rocks[upgrades[upgr-1].power[Math.round(Math.random() * upgrades[upgr-1].power.length)]]
@@ -159,13 +192,6 @@ setInterval(function() {
     document.getElementById("rlevel").innerHTML = `Refiner Level ${ref}`
     document.getElementById("reffects").innerHTML = `Refiner Effects: x${refiners[ref].refiner}`
     document.getElementById("refinerupgrade").innerHTML = `Upgrade Refiner: $${formatCash(refiners[ref+1].cost)}`
-
-		localStorage.setItem("x", x)
-	localStorage.setItem("upgr", upgr)
-	localStorage.setItem("lvl", lvl)
-	localStorage.setItem("xp", xp)
-	localStorage.setItem("grams", grams)
-	localStorage.setItem("ref", ref)
     
 },100)
 
