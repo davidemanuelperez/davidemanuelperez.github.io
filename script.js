@@ -12,7 +12,7 @@ let answered = false
 let workers = 0
 let drill = 0
 let rebirths = 0
-
+let mk = 0
 
 const upgrades = [
     {name: "No", cost: 0, multiplier: 1, power: [0,1]},
@@ -144,15 +144,18 @@ function rebirth() {
 }
 
 function increase() {
-    let rawOre = rocks[upgrades[upgr-1].power[Math.round(Math.random() * upgrades[upgr-1].power.length)]]
-    let xx = rawOre.value
-    grams += xx * upgrades[upgr-1].multiplier * lvl
-    xp += rawOre.xp *upgrades[upgr-1].multiplier
+	if (mk < 19) {
+		let rawOre = rocks[upgrades[upgr-1].power[Math.round(Math.random() * upgrades[upgr-1].power.length)]]
+    		let xx = rawOre.value
+    		grams += xx * upgrades[upgr-1].multiplier * lvl
+    		xp += rawOre.xp *upgrades[upgr-1].multiplier
 
-    if (rawOre == bl) {strk++} else {strk = 0}
-    bl = rawOre
-    document.getElementById("results").innerHTML = `+ [${rawOre.rarity}] ${rawOre.name} (value: ${xx*upgrades[upgr-1].multiplier}, xp: ${rawOre.xp*upgrades[upgr-1].multiplier})`
-    document.getElementById("streak").innerHTML = `streak: ${strk}x`
+    		if (rawOre == bl) {strk++} else {strk = 0} {
+    			bl = rawOre
+    			document.getElementById("results").innerHTML = `+ [${rawOre.rarity}] ${rawOre.name} (value: ${xx*upgrades[upgr-1].multiplier}, xp: ${rawOre.xp*upgrades[upgr-1].multiplier})`
+    			document.getElementById("streak").innerHTML = `streak: ${strk}x`
+		}
+	}
 }
 function upgrader() {
     if (upgr < upgrades.length) {
