@@ -224,6 +224,8 @@ setInterval(function() {
     document.getElementById("reffects").innerHTML = `Refiner Effects: x${refiners[ref].refiner}`
     document.getElementById("refinerupgrade").innerHTML = `Upgrade Refiner: $${formatCash(refiners[ref+1].cost)}`
     	document.getElementById("buyWorker").innerHTML = `Buy Worker(${workers}): ${formatCash((10*workers) + 500)}`
+
+	document.getElementById("workertext").innerHTML = `Workers: ${workers}`
 },100)
 
 document.addEventListener("keypress", function(event) {
@@ -264,7 +266,7 @@ setInterval(function() {
 }, 1000)
 
 function buyWorker() {
-	let workerCost = (10 * workers ) + 500
+	let workerCost = (workers + 500) * 10
 	if (x>= workerCost) {
 		x -= workerCost
 		workers++
