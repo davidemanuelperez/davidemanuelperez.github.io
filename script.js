@@ -14,6 +14,10 @@ let drill = 0
 let rebirths = 0
 let mk = 0
 
+setInterval(function() {
+	mk = 0
+}, 1000)
+
 const upgrades = [
     {name: "No", cost: 0, multiplier: 1, power: [0,1]},
 	{name: "Earthen", cost: 250, multiplier: 2, power: [0,1,2]},
@@ -145,6 +149,7 @@ function rebirth() {
 
 function increase() {
 	if (mk < 19) {
+		mk++
 		let rawOre = rocks[upgrades[upgr-1].power[Math.round(Math.random() * upgrades[upgr-1].power.length)]]
     		let xx = rawOre.value
     		grams += xx * upgrades[upgr-1].multiplier * lvl
