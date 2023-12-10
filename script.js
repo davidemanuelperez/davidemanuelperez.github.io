@@ -86,11 +86,13 @@ window.onload = function() {
   drill = parseInt(getCookie("drill")) || 0;
   ref = parseInt(getCookie("ref")) || 1;
   rebirths = parseInt(getCookie("rebirths")) || 0;
+  xp = parseInt(getCookie("xp")) || 0;
 }
 
 // Save the variables to cookies when the page is about to close
 window.onbeforeunload = function() {
   setCookie("x", x);
+  setCookie("xp", xp);
   setCookie("workers", workers);
   setCookie("lvl", lvl);
   setCookie("grams", grams);
