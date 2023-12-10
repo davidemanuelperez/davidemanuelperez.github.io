@@ -78,7 +78,7 @@ const refiners = [
 
 
 window.onload = function() {
-  tix = parseInt(getCookie("x")) || 0;
+  x = parseInt(getCookie("x")) || 0;
   workers = parseInt(getCookie("workers")) || 0;
   lvl = parseInt(getCookie("lvl")) || 0;
   grams = parseInt(getCookie("grams")) || 0;
