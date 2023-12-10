@@ -223,7 +223,7 @@ setInterval(function() {
     document.getElementById("rlevel").innerHTML = `Refiner Level ${ref}`
     document.getElementById("reffects").innerHTML = `Refiner Effects: x${refiners[ref].refiner}`
     document.getElementById("refinerupgrade").innerHTML = `Upgrade Refiner: $${formatCash(refiners[ref+1].cost)}`
-    	document.getElementById("buyWorker").innerHTML = `Buy Worker(${workers}): ${formatCash(workerCost)}`
+    	document.getElementById("buyWorker").innerHTML = `Buy Worker(${workers}): ${formatCash((10*workers) + 500)}`
 },100)
 
 document.addEventListener("keypress", function(event) {
