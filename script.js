@@ -188,7 +188,7 @@ function sell() {
 
 setInterval(function() {
     if (upgr<upgrades.length) {
-		document.getElementById("upgrade").innerHTML = `${upgrades[upgr].name}: $${formatCash(upgrades[upgr].cost)}` 
+		document.getElementById("upgrade").innerHTML = `${upgrades[upgr].name} Pickaxe: $${formatCash(upgrades[upgr].cost)}` 
     } else {
         document.getElementById("upgrade").innerHTML = `MAX`
     }
